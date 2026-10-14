@@ -1,0 +1,119 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lynix Ivy Bernal — IT Portfolio</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=DM+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--mist:#E8F5E9;--sage:#A5D6A7;--leaf:#66BB6A;--forest:#1B5E20;--ink:#15301A;--muted:#4C6650;--serif:'Cormorant Garamond',serif;--sans:'DM Sans',sans-serif}
+*{box-sizing:border-box}html{scroll-behavior:smooth}
+body{margin:0;font:16.5px/1.7 var(--sans);color:var(--ink);background:#fff}
+h1,h2,h3{font-family:var(--serif);font-weight:600;color:var(--forest);margin:0}
+a{color:inherit}.w{max-width:1040px;margin:0 auto;padding:0 32px}
+nav{position:fixed;top:0;left:0;right:0;z-index:30;transition:background .3s,box-shadow .3s}
+nav .w{display:flex;justify-content:space-between;align-items:center;height:68px}
+nav.solid{background:rgba(232,245,233,.95);backdrop-filter:blur(8px);box-shadow:0 1px 0 var(--sage)}
+.logo{font-family:var(--serif);font-size:22px;font-weight:700;color:#fff;text-decoration:none}
+nav.solid .logo{color:var(--forest)}
+.links{display:flex;gap:4px}.links a{text-decoration:none;font-size:14px;color:#fff;padding:6px 12px;border-radius:20px;transition:.2s}
+nav.solid .links a{color:var(--muted)}.links a:hover,.links a.on{background:var(--leaf);color:#fff}
+#tg{display:none}
+header{min-height:92vh;display:flex;align-items:center;color:#fff;background:linear-gradient(rgba(27,94,32,.8),rgba(27,94,32,.62)),url(photo-gallery-4.jpg) center/cover}
+header .w{padding-top:110px;padding-bottom:70px}
+header h1{color:#fff;font-size:clamp(38px,6vw,68px);line-height:1.08;max-width:15ch}
+header p{max-width:54ch;color:var(--mist);font-size:17.5px;margin:22px 0 32px}
+.btn{display:inline-block;padding:12px 26px;border-radius:30px;text-decoration:none;font-weight:600;font-size:15px;margin-right:10px;transition:.2s}
+.b1{background:var(--mist);color:var(--forest)}.b1:hover{background:var(--sage)}
+.b2{border:1.5px solid var(--sage);color:#fff}.b2:hover{background:rgba(255,255,255,.14)}
+.stats{display:flex;gap:44px;margin-top:52px;flex-wrap:wrap}.stats b{display:block;font:600 34px var(--serif);color:var(--sage)}.stats span{font-size:13px;color:var(--mist)}
+section{padding:96px 0}.alt{background:var(--mist)}
+h2{font-size:clamp(30px,4vw,42px);margin-bottom:34px;position:relative;padding-bottom:16px}
+h2:after{content:"";position:absolute;left:0;bottom:0;width:46px;height:3px;background:var(--leaf);border-radius:2px}
+.ab{display:grid;grid-template-columns:260px 1fr;gap:48px;align-items:start}
+.ab>img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:150px 150px 18px 18px}
+.ab p{color:var(--muted);margin:0 0 16px}
+.facts{display:grid;grid-template-columns:1fr 1fr;gap:14px 28px;margin-top:26px;padding-top:22px;border-top:1px solid var(--sage)}
+.facts small{display:block;color:var(--leaf);font-weight:600;font-size:12px}.facts div{font-size:14.5px}
+.strip{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:56px}
+.strip figure{margin:0}.strip img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:14px;cursor:zoom-in;transition:.35s;display:block}
+.strip img:hover{transform:translateY(-4px);box-shadow:0 16px 30px -14px rgba(27,94,32,.5)}
+figcaption{font-size:14px;color:var(--muted);margin-top:10px;font-style:italic}
+.hn{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:center}
+.hn img{width:100%;border-radius:16px;cursor:zoom-in;display:block}
+.hi{padding:22px 0;border-bottom:1px solid var(--sage)}.hi:last-child{border:0}
+.hi small{color:var(--leaf);font-weight:600}.hi h3{font-size:25px}.hi p{margin:2px 0 0;color:var(--muted);font-size:15px}
+.chips{display:flex;flex-wrap:wrap;gap:12px}.chip{padding:10px 20px;border:1.5px solid var(--sage);border-radius:30px;font-size:15px;transition:.2s}
+.chip:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+.exp{display:grid;grid-template-columns:250px 1fr;gap:30px}
+.tabs{display:flex;flex-direction:column;gap:10px}
+.tab{font:inherit;text-align:left;background:transparent;border:1.5px solid var(--sage);border-radius:14px;padding:14px 18px;cursor:pointer;color:var(--ink);transition:.2s}
+.tab b{display:block;font:600 19px var(--serif);color:var(--forest)}.tab span{font-size:13px;color:var(--muted)}
+.tab:hover{background:#fff}.tab.on{background:var(--forest);border-color:var(--forest)}.tab.on b,.tab.on span{color:#fff}
+.pan{display:none;grid-template-columns:1fr 1fr;gap:26px;background:#fff;border-radius:18px;padding:28px}
+.pan.on{display:grid;animation:f .4s}@keyframes f{from{opacity:0;transform:translateY(8px)}}
+.pan h3{font-size:28px}.org{color:var(--leaf);font-weight:600;font-size:14px;margin:4px 0 12px}.pan p{color:var(--muted);margin:0}
+.ph{display:grid;gap:10px}.ph.n2{grid-template-columns:1fr 1fr}
+.ph img{width:100%;height:100%;max-height:290px;object-fit:cover;aspect-ratio:4/5;border-radius:12px;cursor:zoom-in}.ph.n1 img{aspect-ratio:3/2}
+.cw{position:relative}
+.tr{display:flex;gap:22px;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none;padding:4px 2px 22px}.tr::-webkit-scrollbar{display:none}
+.card{flex:0 0 calc((100% - 44px)/3);scroll-snap-align:start;background:#fff;border:1px solid var(--sage);border-radius:16px;padding:16px;display:flex;flex-direction:column;gap:10px}
+.imgw{position:relative;margin-bottom:14px}.imgw img{width:100%;border-radius:8px;display:block;cursor:zoom-in}.imgw .bd{position:absolute;width:70px;right:-6px;bottom:-20px;border-radius:0;filter:drop-shadow(0 5px 8px rgba(0,0,0,.25));cursor:default}
+.ct{display:flex;justify-content:space-between;gap:8px}.card h3{font-size:19px;line-height:1.25}.ct span{font-size:12px;font-weight:600;color:var(--forest);background:var(--mist);padding:3px 10px;border-radius:12px;height:fit-content;white-space:nowrap}
+.card p{margin:0;font-size:14px;color:var(--muted)}.card a{font-size:14px;font-weight:600;color:var(--forest);text-decoration:none;margin-top:auto}.card a:hover{color:var(--leaf)}
+.ar{position:absolute;top:36%;width:44px;height:44px;border-radius:50%;border:0;background:var(--forest);color:#fff;font-size:24px;cursor:pointer;z-index:2;transition:.2s}.ar:hover{background:var(--leaf)}.ar:disabled{opacity:.25}
+.pv{left:-20px}.nx{right:-20px}.cn{text-align:center;font-size:13px;color:var(--muted);margin:-6px 0 0}
+.empty{border:1.5px dashed var(--sage);border-radius:16px;padding:28px;color:var(--muted)}
+.cl{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}.cl a{border:1.5px solid var(--sage);border-radius:30px;padding:11px 22px;text-decoration:none;font-weight:500;transition:.2s}.cl a:hover{background:var(--forest);color:#fff;border-color:var(--forest)}
+footer{background:var(--forest);color:var(--sage);text-align:center;padding:34px;font-size:14px}
+.js .rv{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}.js .rv.in{opacity:1;transform:none}
+#lb{position:fixed;inset:0;z-index:50;background:rgba(10,30,14,.94);display:none;align-items:center;justify-content:center;flex-direction:column;gap:12px;padding:24px}#lb.open{display:flex}
+#lb img{max-width:92vw;max-height:78vh;border-radius:10px;background:#fff}#lb p{color:var(--mist);font-size:14px;margin:0}
+#lb button{position:absolute;border:0;background:rgba(255,255,255,.16);color:#fff;width:46px;height:46px;border-radius:50%;font-size:24px;cursor:pointer}.x{top:18px;right:18px}.lp{left:18px;top:50%}.ln{right:18px;top:50%}
+@media(max-width:800px){.w{padding:0 22px}section{padding:68px 0}#tg{display:block;background:none;border:0;color:#fff;font-size:26px}nav.solid #tg{color:var(--forest)}
+.links{display:none;position:absolute;top:68px;left:0;right:0;background:var(--mist);flex-direction:column;padding:10px 22px 18px}.links.open{display:flex}.links a{color:var(--forest)!important}
+.ab,.hn,.exp,.pan{grid-template-columns:1fr}.ab>img{max-width:240px}.strip{grid-template-columns:1fr}.tabs{flex-direction:row;overflow-x:auto}.tab{min-width:170px}
+.card{flex-basis:86%}.pv{left:-8px}.nx{right:-8px}.stats{gap:28px}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style></head><body>
+<nav id="nv"><div class="w"><a class="logo" href="#top">Lynix Ivy Bernal</a><button id="tg" aria-label="Menu">☰</button>
+<div class="links" id="lk"><a href="#about">About</a><a href="#honors">Honors</a><a href="#skills">Skills</a><a href="#experience">Experience</a><a href="#certs">Certifications</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></div></nav>
+<header id="top"><div class="w"><h1>I don't just look for opportunities — I grow through them.</h1>
+<p>Motivated and hardworking Information Technology student seeking an entry-level position. Eager to apply my teamwork, time management, adaptability, and willingness to learn while contributing positively to the organization.</p>
+<a class="btn b1" href="#contact">Get in touch</a><a class="btn b2" href="resume-lynix-bernal.pdf" target="_blank">Download resume</a>
+<div class="stats"><div><b>3</b><span>leadership roles</span></div><div><b>6</b><span>certificates earned</span></div><div><b>Top 1</b><span>2nd &amp; 3rd year level</span></div></div></div></header>
+<main>
+<section id="about"><div class="w"><h2>About me</h2><div class="ab"><img src="profile-photo.jpg" alt="Lynix Ivy Bernal"><div>
+<p>I'm Lynix Ivy Bernal, a 21-year-old Information Technology student from Pampanga State University – Lubao Campus. I'm open to new experiences that allow me to explore different environments, develop my abilities, and gain a broader perspective. I believe that stepping outside my comfort zone helps me become more adaptable and prepared for the challenges ahead.</p>
+<p>I'm comfortable handling tasks independently, but I also enjoy collaborating with others and being part of a team. I value clear communication, cooperation, and a positive working environment. I'm always willing to take on unfamiliar tasks, adjust to different situations, and share what I can while learning from those around me.</p>
+<div class="facts"><div><small>Location</small>Saba, Hermosa, Bataan</div><div><small>Course</small>BS Information Technology</div><div><small>University</small>Pampanga State University – Lubao</div><div><small>Graduating</small>August 2027</div></div></div></div>
+<div class="strip"><figure><img src="photo-gallery-1.jpg" alt="Heading to class" data-lb="about" data-cap="Heading to class"><figcaption>Heading to class — every day is a chance to learn something new.</figcaption></figure><figure><img src="photo-gallery-2.jpg" alt="At a campus event" data-lb="about" data-cap="At a campus event"><figcaption>Taking a quiet moment between campus events.</figcaption></figure><figure><img src="photo-gallery-3.jpg" alt="EGAMES member" data-lb="about" data-cap="EGAMES member"><figcaption>Proud to be part of EGAMES and the people I learn with.</figcaption></figure></div></div></section>
+<section id="honors" class="alt"><div class="w"><h2>Academic honors</h2><div class="hn"><img src="photo-honors-3rd-year.jpg" alt="Certificate of Recognition" data-lb="h" data-cap="Certificate of Recognition, Pampanga State University – Lubao Campus"><div>
+<div class="hi"><small>A.Y. 2025–2026</small><h3>Top 1, 3rd Year</h3><p>BSIT, Pampanga State University – Lubao Campus. Ranked first across the entire 3rd year level.</p></div>
+<div class="hi"><small>A.Y. 2024–2025</small><h3>Top 1, 2nd Year</h3><p>BSIT, Pampanga State University – Lubao Campus. Ranked first across the entire 2nd year level.</p></div></div></div></div></section>
+<section id="skills"><div class="w"><h2>Skills</h2><p style="color:var(--muted);margin:-8px 0 26px">I'm still building my technical toolkit through coursework — here's what I lead with in the meantime.</p><div class="chips"><span class="chip">Adaptability</span><span class="chip">Teamwork &amp; Collaboration</span><span class="chip">Time Management</span><span class="chip">Problem Solving</span><span class="chip">Attention to Detail</span><span class="chip">Willingness to Learn</span><span class="chip">Responsibility</span></div></div></section>
+<section id="experience" class="alt"><div class="w"><h2>Leadership experience</h2><div class="exp"><div class="tabs"><button class="tab on" data-t="t0"><b>Director</b><span>EGAMES · 2025–2026</span></button><button class="tab" data-t="t1"><b>Unit Head, PIO</b><span>EGAMES · 2024–2025</span></button><button class="tab" data-t="t2"><b>President</b><span>BKD · 2022–2023</span></button></div><div><div class="pan on" id="t0"><div><h3>Director</h3><p class="org">Elite Graphic Artists and Multimedia Experts Society (EGAMES)</p><p>Coordinated and supported organizational activities and events, collaborating with members and officers to ensure efficient program implementation and successful achievement of organizational goals.</p></div><div class="ph n1"><img src="photo-egames-director.jpg" alt="EGAMES" data-lb="x0" data-cap="Elite Graphic Artists and Multimedia Experts Society (EGAMES)"></div></div><div class="pan" id="t1"><div><h3>Unit Head, PIO</h3><p class="org">Elite Graphic Artists and Multimedia Experts Society (EGAMES) · Public Information Officer</p><p>Promoted organizational announcements and events, informing members of key updates and increasing participation and engagement.</p></div><div class="ph n1"><img src="photo-egames-pio.jpg" alt="EGAMES" data-lb="x1" data-cap="Elite Graphic Artists and Multimedia Experts Society (EGAMES) · Public Information Officer"></div></div><div class="pan" id="t2"><div><h3>President</h3><p class="org">Barkada Kontra Droga (BKD)</p><p>Led anti-drug awareness initiatives, coordinating members to promote drug prevention and strengthen organizational engagement.</p></div><div class="ph n2"><img src="photo-bkd-1.jpg" alt="BKD" data-lb="x2" data-cap="Barkada Kontra Droga (BKD)"><img src="photo-bkd-2.jpg" alt="BKD" data-lb="x2" data-cap="Barkada Kontra Droga (BKD)"></div></div></div></div></div></section>
+<section id="certs"><div class="w"><h2>Certifications &amp; training</h2><div class="cw"><button class="ar pv" aria-label="Previous">‹</button><button class="ar nx" aria-label="Next">›</button><div class="tr"><article class="card"><div class="imgw"><img src="cert-blackstride-network-fundamentals.jpg" alt="Network Fundamentals (IT Networking Webinar) certificate"><img class="bd" src="badge-blackstride-network-fundamentals.png" alt="Badge"></div><div class="ct"><h3>Network Fundamentals (IT Networking Webinar)</h3><span>Oct 2026</span></div><p>BlackStride Cyber · Attendance</p><a href="cert-blackstride-network-fundamentals.pdf" target="_blank">View certificate ↗</a></article><article class="card"><div class="imgw"><img src="cert-yapstudios-generate-human-way.jpg" alt="Generate, The Human Way: AI in Marketing &amp; Business certificate"></div><div class="ct"><h3>Generate, The Human Way: AI in Marketing &amp; Business</h3><span>Sep 2026</span></div><p>Yap Studios · Participation</p><a href="cert-yapstudios-generate-human-way.pdf" target="_blank">View certificate ↗</a></article><article class="card"><div class="imgw"><img src="cert-dict-learn-ai-chatgpt.jpg" alt="Learn AI &amp; ChatGPT: Practical Skills for Work &amp; Everyday Productivity certificate"></div><div class="ct"><h3>Learn AI &amp; ChatGPT: Practical Skills for Work &amp; Everyday Productivity</h3><span>Sep 2026</span></div><p>DICT Regional Office I (ILCDB) · 4-hour training</p><a href="cert-dict-learn-ai-chatgpt.pdf" target="_blank">View certificate ↗</a></article><article class="card"><div class="imgw"><img src="cert-blackstride-securing-ai-101.jpg" alt="Securing AI 101 (AI Webinar) certificate"><img class="bd" src="badge-blackstride-securing-ai-101.png" alt="Badge"></div><div class="ct"><h3>Securing AI 101 (AI Webinar)</h3><span>Sep 2026</span></div><p>BlackStride Cyber · Attendance</p><a href="cert-blackstride-securing-ai-101.pdf" target="_blank">View certificate ↗</a></article><article class="card"><div class="imgw"><img src="cert-cisco-cybersecurity.jpg" alt="Introduction to Cybersecurity certificate"></div><div class="ct"><h3>Introduction to Cybersecurity</h3><span>Jun 2025</span></div><p>Cisco Networking Academy</p><a href="cert-cisco-cybersecurity.pdf" target="_blank">View certificate ↗</a></article><article class="card"><div class="imgw"><img src="cert-tesda-computer-servicing.jpg" alt="Introduction to Computer Systems Servicing certificate"></div><div class="ct"><h3>Introduction to Computer Systems Servicing</h3><span>Jun 2025</span></div><p>TESDA Online Program</p><a href="cert-tesda-computer-servicing.pdf" target="_blank">View certificate ↗</a></article></div><p class="cn"></p></div></div></section>
+<section id="projects" class="alt"><div class="w"><h2>Projects</h2><div class="empty">I haven't published a personal or capstone project yet. Once I complete coursework projects or my capstone, they'll appear here with links to the code on GitHub.</div></div></section>
+<section id="contact"><div class="w"><h2>Let's talk</h2><p style="color:var(--muted);margin:0">I'm seeking job and internship opportunities as I approach graduation in August 2027. Reach out through any of these.</p>
+<div class="cl"><a href="mailto:lynix0208@gmail.com">lynix0208@gmail.com</a><a href="https://github.com/layneks2" target="_blank">GitHub ↗</a><a href="https://www.linkedin.com/in/lynix-bernal-4b84b5369/" target="_blank">LinkedIn ↗</a><a href="tel:+639668843324">+63 966 884 3324</a><a href="resume-lynix-bernal.pdf" target="_blank">Resume (PDF) ↗</a></div></div></section>
+</main><footer>© 2026 Lynix Ivy Bernal</footer>
+<div id="lb"><button class="x" aria-label="Close">×</button><button class="lp">‹</button><img alt=""><p></p><button class="ln">›</button></div>
+<script>
+var $=function(q,r){return[].slice.call((r||document).querySelectorAll(q))},nv=document.getElementById('nv');
+document.documentElement.classList.add('js');
+function sc(){nv.classList.toggle('solid',scrollY>40)}sc();addEventListener('scroll',sc);
+document.getElementById('tg').onclick=function(){document.getElementById('lk').classList.toggle('open')};
+$('#lk a').forEach(function(a){a.onclick=function(){document.getElementById('lk').classList.remove('open')}});
+$('main section').forEach(function(e){e.classList.add('rv')});
+var io=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting){x.target.classList.add('in');io.unobserve(x.target)}})},{threshold:.08});$('.rv').forEach(function(e){io.observe(e)});
+var so=new IntersectionObserver(function(a){a.forEach(function(x){if(x.isIntersecting)$('#lk a').forEach(function(l){l.classList.toggle('on',l.hash==='#'+x.target.id)})})},{rootMargin:'-45% 0px -50% 0px'});$('main section[id]').forEach(function(e){so.observe(e)});
+$('.tab').forEach(function(t){t.onclick=function(){$('.tab,.pan').forEach(function(e){e.classList.remove('on')});t.classList.add('on');document.getElementById(t.dataset.t).classList.add('on')}});
+var tr=$('.tr')[0],cd=$('.card'),pv=$('.pv')[0],nx=$('.nx')[0],cn=$('.cn')[0];
+function stp(){return cd[0].offsetWidth+22}
+function up(){pv.disabled=tr.scrollLeft<4;nx.disabled=tr.scrollLeft+tr.clientWidth>=tr.scrollWidth-4;var v=Math.max(1,Math.round(tr.clientWidth/stp())),f=Math.round(tr.scrollLeft/stp())+1;cn.textContent=f+'\u2013'+Math.min(cd.length,f+v-1)+' of '+cd.length}
+pv.onclick=function(){tr.scrollBy({left:-stp(),behavior:'smooth'})};nx.onclick=function(){tr.scrollBy({left:stp(),behavior:'smooth'})};tr.onscroll=up;addEventListener('resize',up);up();
+cd.forEach(function(c){var i=c.querySelector('img:not(.bd)');i.dataset.lb='c';i.dataset.cap=c.querySelector('h3').textContent});
+var lb=document.getElementById('lb'),li=$('img',lb)[0],lc=$('p',lb)[0],st=[],k=0;
+function sh(){var e=st[k];li.src=e.src;lc.textContent=(e.dataset.cap?e.dataset.cap+'  ·  ':'')+(k+1)+' / '+st.length;$('.lp,.ln',lb).forEach(function(b){b.style.display=st.length>1?'':'none'})}
+$('img[data-lb]').forEach(function(e){e.onclick=function(){st=$('img[data-lb="'+e.dataset.lb+'"]');k=st.indexOf(e);sh();lb.classList.add('open')}});
+function mv(d){k=(k+d+st.length)%st.length;sh()}
+$('.lp',lb)[0].onclick=function(v){v.stopPropagation();mv(-1)};$('.ln',lb)[0].onclick=function(v){v.stopPropagation();mv(1)};lb.onclick=function(){lb.classList.remove('open')};
+addEventListener('keydown',function(e){if(!lb.classList.contains('open'))return;if(e.key==='Escape')lb.classList.remove('open');if(e.key==='ArrowLeft')mv(-1);if(e.key==='ArrowRight')mv(1)});
+</script></body></html>
